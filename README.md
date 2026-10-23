@@ -1,2 +1,4 @@
-# ocean-app
-Website that let's you search any ocean species and gives back details about that species.
+# Oceandex: A Marine Species Field Guide
+Oceandex is a website that lets you search a marine species and receive details and facts about that species. You can see details like their name, habitat, size, and conservation status. You can also save your favorite species and refer to them in a favorites list. I used the speCies.blue API to get my marine species data.
+
+I used async to submit the form (line 4), and I used await to fetch the URL and receive the results from the user's input (lines 14 and 17). I used template literals throughout my code, including in my innerHTML for creating the species cards (lines 112-132). I used object destructuring to get the data of a species from a species object after fetching it from the API (line 17). I used many arrow functions throughout my code, including renderOceanSpecies() (line 111) and several helper functions (lines 166-170). Finally, I used const for every variable in my code.
