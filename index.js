@@ -109,6 +109,9 @@ const renderOceanSpecies = ({
   size,
   depth
 }) => {
+  const isFavorite = getFavorites().some(f => f.scientific_name === scientific_name)
+  const heart = isFavorite ? '♥' : '♡'
+
   speciesDiv.innerHTML = 
     `<div class="species-card">
       <div class="species-left">
@@ -160,13 +163,10 @@ const renderOceanSpecies = ({
   }
 }
 
-const isFavorite = getFavorites().some(f => f.scientific_name === scientific_name)
-const heart = isFavorite ? '♥' : '♡'
-
 const capitalize = str => str ? str.charAt(0).toUpperCase() + str.slice(1) : ''
 
 const centimetersToInches = cm => Math.round(cm / 2.54)
-const centimetersToFeet = cm => Math.round(cm / 30.48)
+const centimetersToFeet = cm => (cm / 30.48).toFixed(1)
 const metersToFeet = m => Math.round(m * 3.28084)
 
 const conservationTerms = {
